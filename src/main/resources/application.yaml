@@ -3,7 +3,8 @@ spring:
     name: dev
 
 # 여기는 spring 밖(최상위)
-fastapi:
-  base-url: http://localhost:8000
-  connect-timeout-ms: 4000
-  read-timeout-ms: 30000
+app:
+  fastapi:
+    base-url: http://localhost:8000
+    connect-timeout-ms: 4000
+    read-timeout-ms: 30000
