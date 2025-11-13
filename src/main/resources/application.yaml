@@ -1,6 +1,8 @@
 spring:
   application:
     name: dev
+  main:
+    web-application-type: servlet
 
 # 여기는 spring 밖(최상위)
 app:
