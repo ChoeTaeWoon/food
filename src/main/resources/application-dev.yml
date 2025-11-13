@@ -21,23 +21,24 @@ spring:
       enabled: true
       path: /h2
   servlet:
-
     multipart:
-
       max-file-size: 20MB
       max-request-size: 20MB
 
-  app:
-    upload:
-      dir: ./uploads
+# 여기부터는 spring 밖(최상위)
+fastapi:
+  base-url: http://localhost:8000
+  connect-timeout-ms: 4000
+  read-timeout-ms: 30000
 
+app:
+  upload:
+    dir: ./uploads
+  jwt:
+    secret: "this-is-a-very-long-secret-key-32bytes-min-OK-123456"
+    expiry-minutes: 10080
 
 logging:
   level:
     org.hibernate.SQL: debug
 
-
-app:
-  jwt:
-    secret: "this-is-a-very-long-secret-key-32bytes-min-OK-123456"
-    expiry-minutes: 10080   # 7일
